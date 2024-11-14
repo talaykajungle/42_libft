@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/13 19:52:59 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/14 17:19:11 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,16 @@ typedef struct s_split_next
 t_split_next;
 
 size_t ft_strlen(const char *s);
+int ft_isalnum(int c);
+int ft_atoi(const char *str);
+int ft_isdigit(int c);
+int ft_isalpha(int c);
+int ft_isascii(int c);
+int ft_isprint(int c);
+int ft_tolower(int c);
+int ft_toupper(int c);
+char *ft_strchr(const char *s, int c);
+
+
 
 #endif

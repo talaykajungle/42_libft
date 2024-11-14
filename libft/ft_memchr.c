@@ -6,8 +6,13 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:35 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/13 19:52:30 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/14 19:40:12 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void *ft_memchr(const char *s, int c, size_t n)
+{
+	
+}
