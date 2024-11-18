@@ -6,16 +6,15 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:02:09 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/13 19:52:58 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:02:47 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	if(c >= 'a' && c<= 'z')
-		c-= 32;
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
 	return (c);
 }

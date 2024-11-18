@@ -6,13 +6,13 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:38:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/13 19:52:24 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:02:00 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-	return ((c >= 'A' && c<= 'Z') || (c >= 'a' && c<= 'z'));
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }

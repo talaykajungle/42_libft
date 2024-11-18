@@ -6,13 +6,13 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:25 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/13 19:52:26 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:02:03 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	return (c >= 0 && c<= 128);
+	return (c >= 0 && c <= 128);
 }

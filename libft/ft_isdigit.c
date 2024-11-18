@@ -6,13 +6,13 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:27 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/13 19:52:27 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:02:06 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-	return (c >='0' && c<='9');
+	return (c >= '0' && c <= '9');
 }

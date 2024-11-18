@@ -6,32 +6,36 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/13 19:52:59 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:17:39 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
-#include <stdio.h>
-#include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
-	void *content;
-	struct s_list *next;
-}
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
-t_list;
-
-typedef struct s_split_next
-{
-	size_t start;
-	size_t end;
-}
-
-t_split_next;
-
-size_t ft_strlen(const char *s);
+size_t				ft_strlen(const char *s);
+size_t				ft_strlen(const char *s);
+int					ft_memcmp(const void *s1, const void *s2, size_t n);
+int					ft_isalnum(int c);
+int					ft_isalpha(int c);
+int					ft_isascii(int c);
+int					ft_isdigit(int c);
+int					ft_isprint(int c);
+void				*ft_memchr(const void *s, int c, size_t n);
+void				*ft_memcpy(void *dest, const void *src, size_t n);
+char				*ft_strchr(const char *s, int c);
+int					ft_tolower(int c);
+int					ft_toupper(int c);
 
 #endif
