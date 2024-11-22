@@ -6,31 +6,29 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:55 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/21 17:53:42 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/22 17:03:13 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// size_t ft_strlcpy(char *dest, const char *src, size_t size)
-// {
-// 	size_t i;
-// 	size_t len;
+size_t ft_strlcpy(char *dest, const char *src, size_t size)
+{
+	size_t i;
+	size_t len;
 	
-// 	i = 0;
-// 	len = 0;
-// 	while(src[len])
-// 		len++;
-// 	if(size == 0)
-// 		return (len);
-// 	while (src[i] && i <(size -1))
-// 	{
-// 		dest[i] = src[i];
-// 		i++;
-// 	}
-// 	dest[i]= '\0';
-// 	return (len);
-// }
+	i = 0;
+	len = 0;
+	while(src[len])
+		len++;
+	if(size == 0)
+		return (len);
+	while (src[i] && i <(size -1))
+		dest[i] = src[i];
+		i++;
+	dest[i]= '\0';
+	return (len);
+}
 
 // int main(void)
 // {
@@ -71,21 +69,3 @@
 //     return 0;
 // }
 
-
-size_t ft_strlcpy(char *dest,const char *src, size_t size)
-{
-	size_t i;
-	size_t len;
-	
-	i = 0;
-	len = 0;
-	while(src[len] == 0)
-		len++;
-	if(size == 0)
-		return len;
-	while()
-	{
-		
-	}
-	
-}
