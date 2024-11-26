@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:53 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/25 20:07:11 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/26 14:57:54 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,67 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 	return(dstlen + srclen);
 }
 
-int main()
-{
-// Empty destination string
-	char dst[10] = "";
-	char *src = "Hello";
-	size_t result = ft_strlcat(dst, src, 10);
-	// Expected: dst = "Hello", result = 5
+// void test_ft_strlcat(char *dst, const char *src, size_t size, const char *expected_dst, size_t expected_return) {
 
-// Empty source string
-	char dst[10] = "Hello";
-	char *src = "";
-	size_t result = ft_strlcat(dst, src, 10);
-	// Expected: dst = "Hello", result = 5
+//     char original_dst[100];
 
-// Size is 0
-	char dest[10] = "Hello";
-	char *src = "";
-	size_t result = ft_strlcat(dest, src, 10);
-}
+//     strcpy(original_dst, dst); // Save the original dst for comparison
+
+//     size_t result = ft_strlcat(dst, src, size);
+
+    
+
+//     printf("Test with dst=\"%s\", src=\"%s\", size=%zu:\n", original_dst, src, size);
+
+//     printf("Resulting dst: \"%s\"\n", dst);
+
+//     printf("Expected dst: \"%s\"\n", expected_dst);
+
+//     printf("Result: %zu, Expected: %zu\n", result, expected_return);
+
+//     printf("Test %s\n\n", (strcmp(dst, expected_dst) == 0 && result == expected_return) ? "PASSED" : "FAILED");
+
+// }
+
+
+// int main() {
+
+//     // Edge cases
+
+//     char dst1[100] = "";
+//     test_ft_strlcat(dst1, "", 1, "", 0);
+
+//     char dst2[100] = "Hello";
+//     test_ft_strlcat(dst2, "", 10, "Hello", 5);
+
+//     char dst3[100] = "";
+//     test_ft_strlcat(dst3, "World", 10, "World", 5);
+
+//     char dst4[100] = "Hello";
+//     test_ft_strlcat(dst4, "World", 3, "Hello", 8);
+
+//     char dst5[100] = "Hello";
+//     test_ft_strlcat(dst5, "World", 5, "Hello", 10);
+
+//     char dst6[100] = "Hello";
+//     test_ft_strlcat(dst6, "World", 12, "HelloWorld", 10);
+
+//     char dst7[100] = "Hello";
+//     test_ft_strlcat(dst7, "World", 8, "HelloWo", 10);
+
+//     char dst8[100] = "A";
+//     test_ft_strlcat(dst8, "B", 2, "AB", 3);
+
+//     char dst9[100] = "Hello";
+//     test_ft_strlcat(dst9, "WorldWorldWorld", 10, "HelloWorl", 22);
+
+//     char dst10[100] = "Hello";
+//     test_ft_strlcat(dst10, "!@#$%", 10, "Hello!@#$%", 10);
+	
+// 	char dst11[100] = "Hello";
+// 	test_ft_strlcat(dst11, "World", 100, "HelloWorld", 10);
+	
+//     return 0;
+
+// }
+    
