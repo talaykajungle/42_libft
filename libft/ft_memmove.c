@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:44 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/20 21:01:03 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/26 13:59:31 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,4 @@ int main() {
     
     printf("After:  %s\n", str);
     printf("Expected: defghijklmnopqrstuvwxyz\n");
-
-    
 }
