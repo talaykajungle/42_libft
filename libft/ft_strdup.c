@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:49 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/28 13:48:46 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/30 18:36:14 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-	char *new;
-	int i;
+	char	*new;
+	int		i;
 
 	i = 0;
-	if(!(new = (char*)malloc(sizeof(char)* ft_strlen(s) + 1)))
-		return NULL;
+	if (!(new = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)))
+		return (NULL);
 	while (*s)
 		new[i++] = *s++;
 	new[i] = '\0';
@@ -46,6 +46,5 @@ char *ft_strdup(const char *s)
 // 		theirs = strdup(av[1]);
 // 		printf(":%s:\n:%s:\n", mine, theirs);
 // 	}
-// 	return 0;	
+// 	return (0);
 // }
-	

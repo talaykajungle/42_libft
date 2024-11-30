@@ -6,26 +6,25 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:46 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/20 21:41:59 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/30 18:35:58 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char *ptr;
+	unsigned char	*ptr;
+	size_t			i;
+
 	ptr = (unsigned char *)s;
-	 
-	size_t i;
 	i = 0;
-	
 	while (i < n)
 	{
 		ptr[i] = (unsigned char)c;
 		i++;
 	}
-	return s;
+	return (s);
 }
 
 // int main() {
@@ -73,5 +72,5 @@ void *ft_memset(void *s, int c, size_t n)
 //     printf("std memset memory: ");
 //     printf("\n");
 
-//     return 0;
+//     return (0);
 // }
