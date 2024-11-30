@@ -6,15 +6,15 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:53 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/30 18:54:10 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/11/30 21:15:18 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -22,20 +22,17 @@ size_t ft_strlen(const char *s)
 	return (i);
 }
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t dstlen;
-	size_t srclen;
+	size_t	i;
+	size_t	dstlen;
+	size_t	srclen;
 
-	// Calculating the length of the strings
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
-	// Check for buffer size (Block of memory that is storen temporarily that will be transferred)
 	if (size < dstlen)
 		return (size + srclen);
 	i = 0;
-	// Append characters need to use a loop
 	while (src[i] != '\0' && (dstlen + i) < (size - 1))
 	{
 		dst[dstlen + i] = src[i];
