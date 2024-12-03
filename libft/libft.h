@@ -6,18 +6,18 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/02 18:47:59 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/03 12:00:53 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <stddef.h>
 
 typedef struct s_list
 {
@@ -46,6 +46,7 @@ char				*ft_strdup(const char *s);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				*ft_bzero(void *s, size_t size);
 void				*ft_calloc(size_t nmemb, size_t size);
-char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char				*ft_strnstr(const char *haystack, const char *needle,
+						size_t len);
 
 #endif
