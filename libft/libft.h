@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/04 16:39:47 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/06 22:12:39 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
 char				**ft_split(const char *s, char c);
+char *ft_strtrim(char const *s1, char const *set);
 
 #endif
