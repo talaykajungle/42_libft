@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 19:01:49 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/07 19:51:14 by tamutlu          ###   ########.fr       */
+/*   Created: 2024/12/07 18:54:47 by tamutlu           #+#    #+#             */
+/*   Updated: 2024/12/07 18:58:28 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*new;
-	int		i;
-
-	i = 0;
-	new = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (new != NULL)
-		return (NULL);
-	while (*s)
-		new[i++] = *s++;
-	new[i] = '\0';
-	return (new);
+	write(fd, &c, 1);
 }
 
-// int main(int ac, char **av)
+// int main()
 // {
-// 	char *mine;
-// 	char *theirs;
-
-// 	if(ac == 2)
-// 	{	mine = ft_strdup(av[1]);
-// 		theirs = strdup(av[1]);
-// 		printf(":%s:\n:%s:\n", mine, theirs);
-// 	}
-// 	return (0);
+// 	int fd = open("ft_te", O_RDWR);
+// 	ft_putchar_fd('G',fd);
 // }

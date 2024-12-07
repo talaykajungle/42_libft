@@ -6,13 +6,16 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/06 22:12:39 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/07 19:42:04 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <ctype.h>
+# include <fcntl.h>
+# include <limits.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -49,6 +52,11 @@ void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
 char				**ft_split(const char *s, char c);
-char *ft_strtrim(char const *s1, char const *set);
+char				*ft_strtrim(char const *s1, char const *set);
+char				*ft_substr(char const *s, unsigned int start, size_t len);
+void				ft_putendl_fd(char *s, int fd);
+void				ft_putchar_fd(char c, int fd);
+void				ft_putnbr_fd(int n, int fd);
+void				ft_putstr_fd(char *s, int fd);
 
 #endif

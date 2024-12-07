@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 19:01:49 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/07 19:51:14 by tamutlu          ###   ########.fr       */
+/*   Created: 2024/12/07 18:55:15 by tamutlu           #+#    #+#             */
+/*   Updated: 2024/12/07 19:06:19 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*new;
-	int		i;
+	int	i;
 
 	i = 0;
-	new = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (new != NULL)
-		return (NULL);
-	while (*s)
-		new[i++] = *s++;
-	new[i] = '\0';
-	return (new);
+	if (fd == -1)
+		return ;
+	while (s[i] != '\0')
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd, "\n", 1);
 }
 
-// int main(int ac, char **av)
-// {
-// 	char *mine;
-// 	char *theirs;
+int main() {
 
-// 	if(ac == 2)
-// 	{	mine = ft_strdup(av[1]);
-// 		theirs = strdup(av[1]);
-// 		printf(":%s:\n:%s:\n", mine, theirs);
-// 	}
-// 	return (0);
-// }
+    char *str = "Hello, World!"; // The string to print
+    // Print to standard output (file descriptor 1)
+    ft_putendl_fd(str, 1);
+
+    // Optionally, you can also print to standard error (file descriptor 2)
+    ft_putendl_fd("This is an error message.", 2);
+    return 0;
+
+}
