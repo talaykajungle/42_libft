@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:55 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/30 18:52:30 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/08 21:20:02 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		len++;
 	if (size == 0)
 		return (len);
-	while (src[i] && i < (size - 1))
+	while (i < size - 1 && src[i])
+	{
 		dest[i] = src[i];
-	i++;
+		i++;
+	}
 	dest[i] = '\0';
 	return (len);
 }
