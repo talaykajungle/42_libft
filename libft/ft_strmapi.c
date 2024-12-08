@@ -6,8 +6,13 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 19:10:58 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/07 19:11:18 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/08 20:22:02 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	
+}

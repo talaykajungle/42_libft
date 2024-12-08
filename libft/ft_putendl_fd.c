@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:55:15 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/07 19:06:19 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/08 11:26:08 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ void	ft_putendl_fd(char *s, int fd)
 	write(fd, "\n", 1);
 }
 
-int main() {
+// int main() {
 
-    char *str = "Hello, World!"; // The string to print
-    // Print to standard output (file descriptor 1)
-    ft_putendl_fd(str, 1);
+//     char *str = "Hello, World!"; // The string to print
+//     // Print to standard output (file descriptor 1)
+//     ft_putendl_fd(str, 1);
 
-    // Optionally, you can also print to standard error (file descriptor 2)
-    ft_putendl_fd("This is an error message.", 2);
-    return 0;
+//     // Optionally, you can also print to standard error (file descriptor 2)
+//     ft_putendl_fd("This is an error message.", 2);
+//     return 0;
 
-}
+// }

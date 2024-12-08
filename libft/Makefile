@@ -1,32 +1,40 @@
-NAME = libft.a
-
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra
-SRCS = ft_memset.c
-# ft_isalnum.c  ft_isprint.c  ft_memmove.c  ft_strlcat.c   ft_strnstr.c  libft.h \
-# ft_atoi.c    ft_isalpha.c  ft_memchr.c   ft_memset.c   ft_strlcopy.c  ft_strrchr.c  \
-# ft_bzero.c   ft_isascii.c  ft_memcmp.c   ft_strdup.c  ft_strlen.c    ft_tolower.c \
-# ft_calloc.c  ft_isdigit.c  ft_memcpy.c   ft_strchr.c   ft_strncpy.c   ft_toupper.c \
-ft_split.c  ft_strtrim.c \
+NAME = libft
+SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
+		ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
+		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
+		ft_atoi.c ft_calloc.c ft_strdup.c \
+		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
+		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
-$(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
-	@echo "Library created: $(NAME)"
+CC = clang
+CFLAGS = -Wall -Wextra -Werror
+ARFLAGS = -rcs
+RM = rm -rf
 
-%.o: %.c libft.h
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	ar $(ARFLAGS) $(NAME).a $(OBJS)
+
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean:
-	@rm -f $(OBJS)
-	@echo "Object file cleaned"
+bonus: $(OBJS) $(OBJS_BONUS)
+	ar $(ARFLAGS) $(NAME).a $(OBJS) $(OBJS_BONUS)
 
-fclean:
-	@rm -f $(NAME)
-	@echo "Library removed"
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(SRCS_BONUS)
+	gcc -nostartfiles -shared -o $(NAME).so $(OBJS) $(OBJS_BONUS)
+
+clean:
+	$(RM) $(OBJS) $(OBJS_BONUS)
+
+fclean: clean
+	$(RM) $(NAME).a $(NAME).so
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all, clean, fclean, re

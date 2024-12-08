@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/07 19:42:04 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/08 20:20:25 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 char				*ft_strdup(const char *s);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-void				*ft_bzero(void *s, size_t size);
+void				ft_bzero(void *s, size_t size);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
@@ -58,5 +58,8 @@ void				ft_putendl_fd(char *s, int fd);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char *s, int fd);
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char				*ft_itoa(int n);
 
 #endif

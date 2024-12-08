@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:16 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/30 18:32:52 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/08 11:39:03 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*p;
+	size_t	i;
+	char	*p;
 
+	i = 0;
 	p = s;
-	while (n)
+	while (i < n)
 	{
-		*p++ = 0;
-		--n;
+		p[i] = 0;
+		i++;
 	}
 }
 

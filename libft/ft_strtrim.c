@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 22:12:11 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/07 18:10:06 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/08 11:27:12 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trimmed);
 }
 
-int main(void)
-{
-    char s[] = "something";
-    char set[] = "someiwrtehn";
-    printf("%s\n", ft_strtrim(s, set));
-    return (0);
-}
+// int main(void)
+// {
+//     char s[] = "something";
+//     char set[] = "someiwrtehn";
+//     printf("%s\n", ft_strtrim(s, set));
+//     return (0);
+// }

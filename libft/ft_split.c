@@ -6,123 +6,134 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 18:55:39 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/06 18:30:35 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/08 19:46:35 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(const char *str, char delimiter)
+int	word_count(char const *s, char c)
 {
-	int	count;
-	int	in_word;
+	int	i;
+	int	j;
 
-	count = 0;
-	in_word = 0;
-	while (*str)
+	i = 0;
+	j = 1;
+	while (s[i] != '\0')
 	{
-		if (*str != delimiter && !in_word)
-		{
-			in_word = 1;
-			count++;
-		}
-		else if (*str == delimiter)
-		{
-			in_word = 0;
-		}
-		str++;
+		if (s[i] == c)
+			j++;
+		i++;
 	}
-	return (count);
+	return (j);
 }
 
-static char	*get_next_word(const char **str, char delimiter)
+int	remove_all(char **array, int j)
 {
-	const char	*start = *str;
-	size_t		length;
-	char		*word;
-
-	while (**str && **str != delimiter)
-	{
-		(*str)++;
-	}
-	length = *str - start;
-	word = (char *)malloc(length + 1);
-	if (word)
-	{
-		strncpy(word, start, length);
-		word[length] = '\0';
-	}
-	return (word);
+	while (j > 0)
+		free(array[--j]);
+	free(array);
+	return (-1);
 }
 
-char	**ft_split(char const *s, char delimiter)
+int	copy_one(char **array, int c, int i, char const *s)
 {
-	char	**result;
-	int		word_count;
+	int	word_len;
+
+	word_len = 0;
+	while (s[i + word_len] != '\0' && s[i + word_len] != c)
+		word_len++;
+	*array = (char *)malloc(sizeof(char) * (word_len + 1));
+	if (!array)
+		return (-1);
+	return (word_len);
+}
+
+int	copyarray(char **array, char c, char const *s)
+{
+	int	i;
+	int	j;
+	int	counter_a;
+	int	word_len;
+
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
+	{
+		counter_a = 0;
+		if (s[i] != c)
+		{
+			word_len = copy_one(&array[j], c, i, s);
+			if (word_len == -1)
+				return (remove_all(array, j));
+			while (counter_a < word_len)
+				array[j][counter_a++] = s[i++];
+			array[j++][counter_a] = '\0';
+		}
+		else
+			i++;
+	}
+	array[j] = NULL;
+	return (word_len);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+	int		i;
+	int		result;
 
 	if (!s)
 		return (NULL);
-	word_count = ft_wordcount(s, delimiter);
-	result = (char **)malloc(sizeof(char *) * (word_count + 1));
-	if (!result)
+	i = word_count(s, c);
+	array = (char **)malloc(sizeof(char *) * (i + 1));
+	if (!array)
 		return (NULL);
-	if (!ft_fill_result(result, s, delimiter))
+	array[i] = NULL;
+	result = copyarray(array, c, s);
+	if (result == -1)
 	{
-		free(result);
+		free(array);
 		return (NULL);
 	}
-	return (result);
+	return (array);
 }
-
-// void	free_split_result(char **result)
-// {
-// 	if (result)
-// 	{
-// 		for (int i = 0; result[i] != NULL; i++)
-// 		{
-// 			free(result[i]);
-// 		}
-// 		free(result);
-// 	}
-// }
-
-// Function to free the allocated memory for the result
-// Free each individual string
-// Free the array of strings
 
 // int	main(void)
 // {
-// 	char	**result;
-
-// 	// Test 1: Normal case
-// 	printf("Test 1: 'Hello World! OpenAI is great' (split on space)\n");
-// 	result = ft_split("Hello World! OpenAI is great", ' ');
-// 	print_split_result(result);
-// 	free_split_result(result);
-// 	// Test 2: String with multiple delimiters in a row
-// 	printf("Test 2: 'Hello,,,,World' (split on comma)\n");
-// 	result = ft_split("Hello,,,,World", ',');
-// 	print_split_result(result);
-// 	free_split_result(result);
-// 	// Test 3: Empty string
-// 	printf("Test 3: '' (split on space)\n");
-// 	result = ft_split("", ' ');
-// 	print_split_result(result);
-// 	free_split_result(result);
-// 	// Test 4: String with only delimiters
-// 	printf("Test 4: ',,,,,' (split on comma)\n");
-// 	result = ft_split(",,,,,", ',');
-// 	print_split_result(result);
-// 	free_split_result(result);
-// 	// Test 5: NULL input
-// 	printf("Test 5: NULL input\n");
-// 	result = ft_split(NULL, ' ');
-// 	print_split_result(result);
-// 	free_split_result(result);
-// 	// Test 6: No delimiters in string
-// 	printf("Test 6: 'HelloWorld' (split on space)\n");
-// 	result = ft_split("HelloWorld", ' ');
-// 	print_split_result(result);
-// 	free_split_result(result);
+// 	char **result;
+// 	char *test_strings[] = {
+// 		"Hello,World,This,Is,A,Test",   // Normal case
+// 		"Hello,,World",                 // Consecutive delimiters
+// 		"Hello",                        // Single word
+// 		"",                             // Empty string
+// 		"   ",                          // String with only spaces
+// 		"Hello World",                  // Space as delimiter
+// 		"Hello,World,This,Is,A,Test,",  // Trailing delimiter
+// 		",Hello,World,This,Is,A,Test",  // Leading delimiter
+// 		"Hello,World,This,Is,A,Test,,", // Trailing and consecutive delimiters
+// 		NULL                            // End of test cases
+// 	};
+// 	char delimiters[] = {',', ' ', ' ', ' ', ' ', ' ', ',', ',', ',', ',', ' '};
+// 	for (int i = 0; test_strings[i] != NULL; i++)
+// 	{
+// 		printf("Testing: \"%s\" with delimiter '%c'\n", test_strings[i],
+// 			delimiters[i]);
+// 		result = ft_split(test_strings[i], delimiters[i]);
+// 		if (result)
+// 		{
+// 			for (int j = 0; result[j] != NULL; j++)
+// 			{
+// 				printf("Word %d: \"%s\"\n", j, result[j]);
+// 				free(result[j]); // Free each allocated string
+// 			}
+// 			free(result); // Free the array of strings
+// 		}
+// 		else
+// 		{
+// 			printf("Result: NULL (Memory allocation failed or empty input)\n");
+// 		}
+// 		printf("\n");
+// 	}
 // 	return (0);
 // }

@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 16:54:19 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/07 19:48:15 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/08 11:28:36 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 //     printf("Substring 2: '%s'\n", substr2); // Expected: ""
 //     free(substr2);
 
-   
-// //Test case 3: Start index is within bounds but length exceeds remaining string
+//
+//	Test case 3: Start index is within bounds
+//	but length exceeds remaining string
+
 //     char *substr3 = ft_substr(str, 0, 20);
 //     printf("Substring 3: '%s'\n", substr3); // Expected: "Hello, World!"
 //     free(substr3);
@@ -76,10 +78,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 //     return (0);
 // }
 
-int main()
-{
-	int i = 39;
-	int len = 40;
-	const char s[] = "my name is atikopati how are you doing ?";
-	printf("my: %s\n",ft_substr(s,i,len));
-}
+// int main()
+// {
+// 	int i = 39;
+// 	int len = 40;
+// 	const char s[] = "my name is atikopati how are you doing ?";
+// 	printf("my: %s\n",ft_substr(s,i,len));
+// }
