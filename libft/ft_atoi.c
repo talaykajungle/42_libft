@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:10 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/09 17:31:10 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/03 12:08:44 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ int	ft_atoi(const char *str)
 		res = res * 10 + *str - '0';
 		str++;
 	}
-	return (res * sign);
+	return (res + sign);
 }

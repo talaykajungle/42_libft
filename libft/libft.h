@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:05:34 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/09 20:58:58 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/08 20:20:25 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,5 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_itoa(int n);
-int					ft_atoi(const char *str);
-char				*ft_strjoin(char const *s1, char const *s2);
 
 #endif
