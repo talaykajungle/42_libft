@@ -6,69 +6,106 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 19:11:25 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/08 22:57:07 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/09 09:30:11 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_num_len(int n)
+char	*reversy(char *s)
 {
-	int	len;
+	char	c;
+	int		i;
+	int		j;
 
-	len = 0;
-	if (n <= 0)
+	i = 0;
+	c = 0;
+	j = ft_strlen(s) - 1;
+	if (s[0] == '-')
+		i++;
+	while (i < j)
 	{
-		len = 1; // Account for negative sign or zero
+		c = s[i];
+		s[i] = s[j];
+		s[j] = c;
+		i++;
+		j--;
 	}
-	while (n)
+	return (s);
+}
+
+int	condition_check(char **s, int index, long n, int is_op)
+{
+	if (n == 0)
+	{
+		(*s)[index++] = '0';
+		(*s)[index] = '\0';
+		return (2);
+	}
+	if (is_op == 1)
+		index++;
+	return (index);
+}
+
+int	check_negative(char **s, int index, long n)
+{
+	int	is_op;
+
+	is_op = 0;
+	if (n < 0)
+	{
+		(*s)[index] = '-';
+		is_op = 1;
+	}
+	return (is_op);
+}
+
+int	get_size(long n)
+{
+	int	i;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		i++;
+		n = -n;
+	}
+	while (n > 0)
 	{
 		n /= 10;
-		len++;
+		i++;
 	}
-	return (len);
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		len;
+	int		is_op;
 	int		i;
+	char	*s;
+	long	num;
 
-	len = get_num_len(n);
-	str = (char *)malloc(len + 1);
-	if (!str)
+	num = n;
+	i = 0;
+	s = (char *)malloc(get_size(num) + 1 * sizeof(char));
+	if (!s)
 		return (NULL);
-	str[len] = '\0'; // Null-terminate the string
-	if (n == 0)
+	is_op = check_negative(&s, i, num);
+	i = condition_check(&s, i, num, is_op);
+	if (i == 2)
+		return (s);
+	if (num < 0)
+		num = -num;
+	while (num > 0)
 	{
-		str[0] = '0';
-		return (str); // Return early for zero
+		s[i++] = num % 10 + '0';
+		num /= 10;
 	}
-	if (n < 0)
-	{
-		str[0] = '-';
-		if (n == INT_MIN)
-		{
-			n = 147483648; // Handle INT_MIN
-		}
-		else
-		{
-			n = -n; // Make n positive
-		}
-	}
-	i = len - 1;
-	while (n > 0)
-	{
-		str[i] = (n % 10) + '0'; // Fill the string with digits
-		n /= 10; // Remove the last digit
-		i--;
-	}
-	if (str[0] == '-')
-	{
-		str[1] = '2'; // Handle INT_MIN specifically
-	}
-	return (str); // Return the resulting string
+	s[i] = '\0';
+	s = reversy(s);
+	return (s);
 }
 
 // int	main(void)
