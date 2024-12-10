@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:51 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/12/03 12:07:33 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/10 12:03:36 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (s == NULL)
-		return (NULL);
 	while (*s)
 	{
 		if (*s == (char)c)

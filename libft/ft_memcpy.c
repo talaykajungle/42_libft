@@ -6,7 +6,7 @@
 /*   By: tamutlu <tamutlu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:01:41 by tamutlu           #+#    #+#             */
-/*   Updated: 2024/11/19 18:24:32 by tamutlu          ###   ########.fr       */
+/*   Updated: 2024/12/10 11:56:26 by tamutlu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*ptr_src = (const char *)src;
 	size_t		i;
 
-	if (dest == NULL)
+	if (dest == NULL && src == NULL)
 		return (NULL);
 	ptr_dest = (char *)dest;
 	i = 0;

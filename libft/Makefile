@@ -10,10 +10,6 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 
 OBJS = $(SRCS:.c=.o)
 
-# Define bonus source files and object files
-# BONUS_SRCS = ft_bonus1.c ft_bonus2.c  # Add your actual bonus source files here
-# OBJS_BONUS = $(BONUS_SRCS:.c=.o)
-
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = -rcs
@@ -27,8 +23,6 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# bonus: $(OBJS) $(OBJS_BONUS)
-# 	ar $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
 
 so: $(OBJS) $(OBJS_BONUS)
 	$(CC) -nostartfiles -fPIC $(CFLAGS) -shared -o $(NAME).so $(OBJS) $(OBJS_BONUS)
