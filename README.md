@@ -41,47 +41,14 @@ The Makefile must include at least the following rules:
 ### Compilation Flags
 The Makefile must compile source files with the following flags:<br>
 &#x2022; makefile<br>
-&#x2022; <pre>CFLAGS = -Wall -Wextra -Werror</pre><br>
-These flags enable warnings and treat them as errors, ensuring code quality.<br>
+<pre>CFLAGS = -Wall -Wextra -Werror</pre><br>
+These flags enable warnings and treat them as errors, ensuring code quality.
 
 ### No Relinking
 The Makefile must be designed to avoid relinking, meaning it should only recompile files that have been modified.
 Library Creation<br>
-The ### ar command must be used to create the library (libft.a). The use of libtool is explicitly forbidden.
-Output
-The compiled library (libft.a) must be created at the root of your repository.
-Example Structure
-Here's a basic structure for the Libft Makefile:
-makefile
-<pre>
-  <code>
-NAME = libft.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-SRCS = ft_strlen.c ft_strcpy.c # ... other source files
-OBJS = $(SRCS:.c=.o)
+The ar command must be used to create the library (libft.a). The use of libtool is explicitly forbidden.
 
-all: $(NAME)
-
-$(NAME): $(OBJS)
-    ar rcs $(NAME) $(OBJS)
-
-%.o: %.c
-    $(CC) $(CFLAGS) -c $< -o $@
-
-clean:
-    rm -f $(OBJS)
-
-fclean: clean
-    rm -f $(NAME)
-
-re: fclean all
-
-bonus: # Add bonus rules here
-
-.PHONY: all clean fclean re bonus<br>
-  </code>    
-</pre>
 ### Learning Outcomes
 By completing Libft, students gain:<br>
 &#x2022; Deep understanding of C function implementations.<br>
